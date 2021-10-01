@@ -12,7 +12,7 @@ pipeline {
       }
     }
     
-        stage("Build image") {
+    stage("Build image") {
             steps {
                 script {
                     echo "Build image with tag: ${env.BUILD_ID}"
@@ -22,7 +22,7 @@ pipeline {
         }
     
 
-      stage("Push image") {
+    stage("Push image") {
         steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
